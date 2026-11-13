@@ -74,9 +74,11 @@ If you'd like to explore or run this project locally:
 ## 📬 Connect With Me
 
 - **Website**: [himanshugunwant.com](https://himanshugunwant.com)
-- **GitHub**: [@Himanshu-Gunwant](https://github.com/Himanshu-Gunwant)
-- **X / Twitter**: [@himanshu](https://x.com/himanshu)
-- **LinkedIn**: [himanshu](https://linkedin.com/in/himanshu)
+- **GitHub**: [@himanshu-gunwant](https://github.com/himanshu-gunwant)
+- **X / Twitter**: [@himanshugg_](https://x.com/himanshugg_)
+- **LinkedIn**: [himanshugunwant](https://www.linkedin.com/in/himanshugunwant/)
+- **YouTube**: [@Himanshu-Gunwant](https://www.youtube.com/@Himanshu-Gunwant)
+- **Instagram**: [@himanshugunwant_](https://www.instagram.com/himanshugunwant_)
 - **Email**: [hello@himanshugunwant.com](mailto:hello@himanshugunwant.com)
 
 ---
