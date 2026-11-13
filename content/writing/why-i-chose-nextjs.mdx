@@ -1,0 +1,37 @@
+---
+title: "Why I choose minimal stacks for personal projects"
+date: "2026 · 09"
+description: "Choosing quiet constraints over complex micro-architectures for long-term maintainability."
+---
+
+Every few years, the frontend ecosystem undergoes a tectonic shift. New bundlers arrive, state management patterns evolve, and edge runtimes compete for supremacy.
+
+Yet, when building a personal home on the internet, the most rewarding design choice is restraint.
+
+## The burden of excess tooling
+
+It is tempting to throw the entire kitchen sink at a simple portfolio: multiple headless CMS integrations, client-side state hydration libraries, complex database connections, and flashy animation packages.
+
+Soon enough, you spend more time fixing broken dependency updates and hydration mismatches than actually writing or making things.
+
+```typescript
+// Complexity you don't need for a personal website
+const site = createDistributedCluster({
+  cacheStrategy: "multi-tier-edge",
+  graphqlEndpoint: process.env.CMS_GRAPHQL_URL,
+  analyticsPipeline: true,
+});
+```
+
+Contrast that with a static file structure:
+
+- Markdown files committed directly to git.
+- Typed metadata in a single file.
+- Standard CSS utilities without runtime overhead.
+- Near-zero client JavaScript footprint.
+
+## Endurance over novelty
+
+A website built with minimal moving parts can sit untouched for three years and still build cleanly on the first run.
+
+When you strip away the noise, what remains is the typography, the clarity of thought, and the work itself. That is what matters.

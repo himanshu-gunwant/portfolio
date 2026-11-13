@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Himanshu Gunwant — Personal Portfolio & Writing
 
-## Getting Started
+Hey there! 👋 I'm **Himanshu Gunwant**, a Computer Science undergraduate at **IIIT Tiruchirappalli**. I'm a developer and builder passionate about backend systems, developer tooling, and building clean, reliable software that solves real problems.
 
-First, run the development server:
+This repository houses the source code for my personal portfolio and writing space at [himanshugunwant.com](https://himanshugunwant.com).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✦ Design & Philosophy
+
+I wanted my corner of the internet to be fast, quiet, and distraction-free:
+
+- **Text-First & Minimal**: Single centered column layout (`max-w-2xl`), dark-only aesthetic, clean typography, and zero visual clutter.
+- **Lightweight by Design**: Smooth CSS entrance transitions with no heavy client-side JavaScript or bulky animation libraries. Fully respects `prefers-reduced-motion`.
+- **Markdown / MDX Native**: Articles and essays are written in local `.mdx` files with frontmatter, parsed at build time for instant page loads.
+- **Open Web Ready**: Built-in RSS feed at [`/feed.xml`](/app/feed.xml/route.ts), dynamic `sitemap.xml`, `robots.txt`, and full OpenGraph/Twitter card metadata.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router, React 19)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (modern CSS-first theme configuration)
+- **Content**: MDX parsed with `gray-matter` & rendered with `next-mdx-remote`
+- **Typography**: [Geist](https://vercel.com/font) (Sans & Mono)
+- **Language**: TypeScript
+- **Deployment**: [Vercel](https://vercel.com)
+
+---
+
+## 📁 Project Structure
+
+```
+├── app/
+│   ├── feed.xml/route.ts      # Native RSS 2.0 XML generator
+│   ├── writing/               # Writing index & dynamic [slug] article views
+│   ├── globals.css            # Tailwind v4 theme, tokens & CSS keyframes
+│   ├── layout.tsx             # Root layout, Geist fonts & global SEO metadata
+│   ├── page.tsx               # Homepage (Hero, About, Projects, Recent Writing)
+│   ├── robots.ts              # Dynamic robots.txt
+│   └── sitemap.ts             # Dynamic sitemap.xml
+├── components/                # Modular React components (Hero, Nav, Projects, etc.)
+├── content/writing/           # My essays and technical writings in MDX
+├── data/site.ts               # Site configuration, bio, socials & project entries
+└── lib/                       # MDX parsing utilities and TypeScript definitions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Running Locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+If you'd like to explore or run this project locally:
 
-## Learn More
+1. **Clone the repository:**
+   ```bash
+   git clone git@github.com:himanshu-gunwant/portfolio.git
+   cd portfolio
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Start the local dev server:**
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📬 Connect With Me
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Website**: [himanshugunwant.com](https://himanshugunwant.com)
+- **GitHub**: [@Himanshu-Gunwant](https://github.com/Himanshu-Gunwant)
+- **X / Twitter**: [@himanshu](https://x.com/himanshu)
+- **LinkedIn**: [himanshu](https://linkedin.com/in/himanshu)
+- **Email**: [hello@himanshugunwant.com](mailto:hello@himanshugunwant.com)
+
+---
+
+## 📄 License
+
+The code in this repository is open-source. Feel free to use the layout, styling, and architecture as inspiration for your own portfolio. Please do not copy my personal writing, bio, or images directly.
