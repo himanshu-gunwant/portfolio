@@ -2,6 +2,7 @@ import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import { ProjectList } from "@/components/ProjectList";
 import { WritingList } from "@/components/WritingList";
+import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/data/site";
 import { getAllPosts } from "@/lib/mdx";
 
@@ -9,9 +10,38 @@ export default function HomePage() {
   const posts = getAllPosts().slice(0, 3);
   const githubLink =
     siteConfig.socials.find((s) => s.icon === "github")?.href || "https://github.com";
+  const siteUrl = siteConfig.url.replace(/\/$/, "");
+
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteConfig.name,
+    url: siteUrl,
+    image: `${siteUrl}${siteConfig.avatar}`,
+    jobTitle: "Developer & Builder",
+    description: siteConfig.description,
+    alumnusOf: {
+      "@type": "EducationalOrganization",
+      name: "Indian Institute of Information Technology, Tiruchirappalli",
+    },
+    sameAs: siteConfig.socials.map((s) => s.href),
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.title,
+    url: siteUrl,
+    description: siteConfig.description,
+    author: {
+      "@type": "Person",
+      name: siteConfig.name,
+    },
+  };
 
   return (
     <div className="pt-6 sm:pt-10 space-y-2">
+      <JsonLd data={[personJsonLd, websiteJsonLd]} />
       <Hero />
 
       {/* About */}

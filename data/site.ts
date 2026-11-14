@@ -6,7 +6,7 @@ export const siteConfig: SiteConfig = {
   tagline: "Developer · Builder · Student @ IIIT Tiruchirappalli",
   description: "Developer · Builder · Student @ IIIT Tiruchirappalli. Minimalist portfolio and writing by Himanshu Gunwant.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://himanshugunwant.com",
-  avatar: "/pfp_himanshu.png",
+  avatar: "/profile.jpg",
   email: process.env.NEXT_PUBLIC_EMAIL || "hello@himanshugunwant.com",
   socials: [
     {

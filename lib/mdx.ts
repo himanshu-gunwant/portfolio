@@ -52,3 +52,18 @@ export function getAllPosts(): Post[] {
   // Sort descending by date (e.g. "2026 · 11" > "2026 · 09")
   return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
+
+export function parsePostDate(dateStr: string): Date {
+  if (!dateStr) return new Date();
+  const dotMatch = dateStr.match(/^(\d{4})\s*·\s*(\d{1,2})$/);
+  if (dotMatch) {
+    const month = dotMatch[2].padStart(2, "0");
+    return new Date(Date.UTC(parseInt(dotMatch[1], 10), parseInt(month, 10) - 1, 1));
+  }
+  const parsed = new Date(dateStr);
+  return isNaN(parsed.getTime()) ? new Date() : parsed;
+}
+
+export function formatIsoDate(dateStr: string): string {
+  return parsePostDate(dateStr).toISOString();
+}

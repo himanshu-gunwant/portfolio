@@ -1,0 +1,102 @@
+# Himanshu Gunwant — Full Knowledge Base & Articles
+
+> Developer · Builder · Student @ IIIT Tiruchirappalli. Minimalist portfolio and writing by Himanshu Gunwant.
+
+## About
+
+Computer Science undergraduate at IIIT Tiruchirappalli, interested in building products, backend systems, and exploring how things work under the hood.
+
+I enjoy solving problems, experimenting with ideas, and building software that's simple, reliable, and useful.
+
+- Primary Website: https://himanshugunwant.com
+- LLMs Index: https://himanshugunwant.com/llms.txt
+- Sitemap: https://himanshugunwant.com/sitemap.xml
+- RSS Feed: https://himanshugunwant.com/feed.xml
+
+## Projects
+
+- [Antigravity Companion](https://github.com/himanshu-gunwant/Antigravity-Companion): Cross-platform mobile workspace client and relay server for real-time synchronization and conversation management. (mobile · Flutter · Node.js)
+- [Paste](https://github.com/himanshu-gunwant/Paste): Production-grade Pastebin platform backend featuring atomic burn-after-read, revision diffing, and OAuth authentication. (backend · TypeScript · PostgreSQL)
+
+## Contact & Social Links
+
+- Email: hello@himanshugunwant.com
+- [X (formerly Twitter)](https://x.com/himanshugg_)
+- [GitHub](https://github.com/himanshu-gunwant)
+- [LinkedIn](https://www.linkedin.com/in/himanshugunwant/)
+- [YouTube](https://www.youtube.com/@Himanshu-Gunwant)
+- [Instagram](https://www.instagram.com/himanshugunwant_)
+
+---
+
+## Full Articles & Writing
+
+### Building in public: the calm way
+- Slug: building-in-public
+- URL: https://himanshugunwant.com/writing/building-in-public
+- Date: 2026 · 11
+- Description: Why sharing raw progress beats polished launches, and how to stay grounded while doing it.
+
+When we build software in isolation, we often chase an elusive perfection. The code has to be flawless, the design pristine, and the marketing copy immaculate before anyone gets to see a single screen.
+
+In reality, software is a conversation between the creator and the people who use it.
+
+## The trap of silent shipping
+
+Keeping your head down for six months without external feedback has a hidden cost. You accumulate cognitive debt. Every feature is a hypothesis, and until real humans touch what you built, you are compounding unverified assumptions.
+
+> "The first draft of anything is about discovering what you actually think. The second is making it understandable to others."
+
+Building in public shifts the dynamic:
+
+1. **Faster reality checks**: A simple tweet or screen recording often exposes UX quirks within minutes.
+2. **Accountability**: Saying you will ship a feature this week makes you cut scope ruthlessly.
+3. **Genuine connection**: People don't just buy a tool; they root for the craftsperson behind it.
+
+## Keeping it calm
+
+Building in public doesn't mean broadcasting every minor bug or burning yourself out on social feeds. It simply means leaving the workshop door slightly ajar.
+
+Share what worked, share what failed, and keep shipping.
+
+
+---
+
+### Why I choose minimal stacks for personal projects
+- Slug: why-i-chose-nextjs
+- URL: https://himanshugunwant.com/writing/why-i-chose-nextjs
+- Date: 2026 · 09
+- Description: Choosing quiet constraints over complex micro-architectures for long-term maintainability.
+
+Every few years, the frontend ecosystem undergoes a tectonic shift. New bundlers arrive, state management patterns evolve, and edge runtimes compete for supremacy.
+
+Yet, when building a personal home on the internet, the most rewarding design choice is restraint.
+
+## The burden of excess tooling
+
+It is tempting to throw the entire kitchen sink at a simple portfolio: multiple headless CMS integrations, client-side state hydration libraries, complex database connections, and flashy animation packages.
+
+Soon enough, you spend more time fixing broken dependency updates and hydration mismatches than actually writing or making things.
+
+```typescript
+// Complexity you don't need for a personal website
+const site = createDistributedCluster({
+  cacheStrategy: "multi-tier-edge",
+  graphqlEndpoint: process.env.CMS_GRAPHQL_URL,
+  analyticsPipeline: true,
+});
+```
+
+Contrast that with a static file structure:
+
+- Markdown files committed directly to git.
+- Typed metadata in a single file.
+- Standard CSS utilities without runtime overhead.
+- Near-zero client JavaScript footprint.
+
+## Endurance over novelty
+
+A website built with minimal moving parts can sit untouched for three years and still build cleanly on the first run.
+
+When you strip away the noise, what remains is the typography, the clarity of thought, and the work itself. That is what matters.
+

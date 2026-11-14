@@ -2,7 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getPostBySlug, getPostSlugs } from "@/lib/mdx";
+import { JsonLd } from "@/components/JsonLd";
+import { siteConfig } from "@/data/site";
+import { getPostBySlug, getPostSlugs, parsePostDate } from "@/lib/mdx";
 
 interface PageProps {
   params: Promise<{
@@ -27,13 +29,30 @@ export async function generateMetadata({
     };
   }
 
+  const siteUrl = siteConfig.url.replace(/\/$/, "");
+  const postUrl = `${siteUrl}/writing/${slug}`;
+  const isoDate = parsePostDate(post.date).toISOString();
+
   return {
     title: post.title,
     description: post.description,
+    alternates: {
+      canonical: `/writing/${slug}`,
+    },
     openGraph: {
-      title: post.title,
+      title: `${post.title} — ${siteConfig.name}`,
       description: post.description,
       type: "article",
+      url: postUrl,
+      publishedTime: isoDate,
+      modifiedTime: isoDate,
+      authors: [siteConfig.name],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} — ${siteConfig.name}`,
+      description: post.description,
+      creator: "@himanshugg_",
     },
   };
 }
@@ -46,8 +65,63 @@ export default async function PostPage({ params }: PageProps) {
     notFound();
   }
 
+  const siteUrl = siteConfig.url.replace(/\/$/, "");
+  const postUrl = `${siteUrl}/writing/${slug}`;
+  const isoDate = parsePostDate(post.date).toISOString();
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: isoDate,
+    dateModified: isoDate,
+    author: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteUrl,
+    },
+    publisher: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteUrl,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    url: postUrl,
+  };
+
+  const breadcrumbsJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Writing",
+        item: `${siteUrl}/writing`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: postUrl,
+      },
+    ],
+  };
+
   return (
     <article className="pt-6 sm:pt-10 animate-enter delay-1">
+      <JsonLd data={[articleJsonLd, breadcrumbsJsonLd]} />
+
       <div className="space-y-4 mb-8">
         <Link
           href="/writing"
@@ -56,9 +130,9 @@ export default async function PostPage({ params }: PageProps) {
           ← All writing
         </Link>
         <div className="space-y-2">
-          <div className="text-xs text-muted/75 font-mono">
+          <time dateTime={isoDate} className="block text-xs text-muted/75 font-mono">
             {post.date}
-          </div>
+          </time>
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
             {post.title}
           </h1>

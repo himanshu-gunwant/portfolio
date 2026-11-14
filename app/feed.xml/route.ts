@@ -1,5 +1,5 @@
 import { siteConfig } from "@/data/site";
-import { getAllPosts } from "@/lib/mdx";
+import { getAllPosts, parsePostDate } from "@/lib/mdx";
 
 function escapeXml(unsafe: string): string {
   return unsafe
@@ -13,16 +13,20 @@ function escapeXml(unsafe: string): string {
 export async function GET() {
   const posts = getAllPosts();
   const siteUrl = siteConfig.url.replace(/\/$/, "");
+  const latestBuildDate =
+    posts.length > 0 ? parsePostDate(posts[0].date).toUTCString() : new Date().toUTCString();
 
   const itemsXml = posts
     .map((post) => {
       const postUrl = `${siteUrl}/writing/${post.slug}`;
+      const pubDate = parsePostDate(post.date).toUTCString();
       return `    <item>
       <title>${escapeXml(post.title)}</title>
       <link>${postUrl}</link>
-      <guid>${postUrl}</guid>
+      <guid isPermaLink="true">${postUrl}</guid>
       <description>${escapeXml(post.description)}</description>
-      <pubDate>${new Date().toUTCString()}</pubDate>
+      <pubDate>${pubDate}</pubDate>
+      <author>${escapeXml(siteConfig.email)} (${escapeXml(siteConfig.name)})</author>
     </item>`;
     })
     .join("\n");
@@ -34,7 +38,7 @@ export async function GET() {
     <link>${siteUrl}</link>
     <description>${escapeXml(siteConfig.description)}</description>
     <language>en-us</language>
-    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <lastBuildDate>${latestBuildDate}</lastBuildDate>
     <atom:link href="${siteUrl}/feed.xml" rel="self" type="application/rss+xml"/>
 ${itemsXml}
   </channel>

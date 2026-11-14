@@ -1,0 +1,33 @@
+# Himanshu Gunwant
+
+> Developer · Builder · Student @ IIIT Tiruchirappalli. Minimalist portfolio and writing by Himanshu Gunwant.
+
+## About
+
+Computer Science undergraduate at IIIT Tiruchirappalli, interested in building products, backend systems, and exploring how things work under the hood.
+
+I enjoy solving problems, experimenting with ideas, and building software that's simple, reliable, and useful.
+
+- Primary Website: https://himanshugunwant.com
+- Full Context & Articles: https://himanshugunwant.com/llms-full.txt
+- Sitemap: https://himanshugunwant.com/sitemap.xml
+- RSS Feed: https://himanshugunwant.com/feed.xml
+
+## Projects
+
+- [Antigravity Companion](https://github.com/himanshu-gunwant/Antigravity-Companion): Cross-platform mobile workspace client and relay server for real-time synchronization and conversation management. (mobile · Flutter · Node.js)
+- [Paste](https://github.com/himanshu-gunwant/Paste): Production-grade Pastebin platform backend featuring atomic burn-after-read, revision diffing, and OAuth authentication. (backend · TypeScript · PostgreSQL)
+
+## Writing
+
+- [Building in public: the calm way](https://himanshugunwant.com/writing/building-in-public): Why sharing raw progress beats polished launches, and how to stay grounded while doing it. (2026 · 11)
+- [Why I choose minimal stacks for personal projects](https://himanshugunwant.com/writing/why-i-chose-nextjs): Choosing quiet constraints over complex micro-architectures for long-term maintainability. (2026 · 09)
+
+## Contact & Social Links
+
+- Email: hello@himanshugunwant.com
+- [X (formerly Twitter)](https://x.com/himanshugg_)
+- [GitHub](https://github.com/himanshu-gunwant)
+- [LinkedIn](https://www.linkedin.com/in/himanshugunwant/)
+- [YouTube](https://www.youtube.com/@Himanshu-Gunwant)
+- [Instagram](https://www.instagram.com/himanshugunwant_)
