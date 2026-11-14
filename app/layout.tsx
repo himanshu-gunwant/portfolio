@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   ],
   category: "technology",
   alternates: {
-    canonical: "./",
+    canonical: "/",
     types: {
       "application/rss+xml": [
         { url: "/feed.xml", title: `${siteConfig.title} RSS Feed` },

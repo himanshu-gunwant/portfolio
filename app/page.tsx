@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import { ProjectList } from "@/components/ProjectList";
@@ -5,6 +6,12 @@ import { WritingList } from "@/components/WritingList";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/data/site";
 import { getAllPosts } from "@/lib/mdx";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function HomePage() {
   const posts = getAllPosts().slice(0, 3);
