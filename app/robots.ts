@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/_next/", "/api/"],
+        disallow: "/api/",
       },
       {
         userAgent: [
@@ -24,7 +24,7 @@ export default function robots(): MetadataRoute.Robots {
           "Diffbot",
         ],
         allow: ["/", "/llms.txt", "/llms-full.txt", "/writing/"],
-        disallow: ["/_next/", "/api/"],
+        disallow: "/api/",
       },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,
