@@ -2,7 +2,7 @@ import Link from "next/link";
 import { siteConfig } from "@/data/site";
 
 export function Nav() {
-  const githubLink = siteConfig.socials.find((s) => s.icon === "github")?.href || "https://github.com";
+  const githubLink = siteConfig.socials.find((s) => s.icon === "github")?.href || "https://github.com/himanshu-gunwant";
 
   return (
     <nav
@@ -28,6 +28,14 @@ export function Nav() {
         >
           Writing
         </Link>
+        <a
+          href={siteConfig.linksUrl || "https://links.himanshugunwant.com"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/30 rounded"
+        >
+          Links
+        </a>
         <a
           href={githubLink}
           target="_blank"

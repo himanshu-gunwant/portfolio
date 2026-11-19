@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const posts = getAllPosts().slice(0, 3);
   const githubLink =
-    siteConfig.socials.find((s) => s.icon === "github")?.href || "https://github.com";
+    siteConfig.socials.find((s) => s.icon === "github")?.href || "https://github.com/himanshu-gunwant";
   const siteUrl = siteConfig.url.replace(/\/$/, "");
 
   const personJsonLd = {

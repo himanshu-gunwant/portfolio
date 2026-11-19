@@ -8,6 +8,7 @@ export const siteConfig: SiteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://himanshugunwant.com",
   avatar: "/profile.jpg",
   email: process.env.NEXT_PUBLIC_EMAIL || "hello@himanshugunwant.com",
+  linksUrl: process.env.NEXT_PUBLIC_LINKS_URL || "https://links.himanshugunwant.com",
   socials: [
     {
       label: "X (formerly Twitter)",
@@ -41,18 +42,23 @@ export const siteConfig: SiteConfig = {
   ],
   projects: [
     {
-      name: "Antigravity Companion",
-      description: "Cross-platform mobile workspace client and relay server for real-time synchronization and conversation management.",
-      tag: "mobile · Flutter · Node.js",
-      href: process.env.NEXT_PUBLIC_PROJECT_ANTIGRAVITY_COMPANION_URL || "https://github.com/himanshu-gunwant/Antigravity-Companion",
-      isExternal: true,
+      name: "Relay X",
+      slug: "relay-x",
+      description: "A mobile companion for remote development and AI coding workflows. Real-time telemetry, agent streaming, and remote control.",
+      tag: "Flutter · Fastify · WebSockets · TypeScript",
+      href: "/projects/relay-x",
+      githubUrl: process.env.NEXT_PUBLIC_PROJECT_RELAY_X_URL || "https://github.com/himanshu-gunwant/Relay-X",
+      isExternal: false,
     },
     {
       name: "Paste",
-      description: "Production-grade Pastebin platform backend featuring atomic burn-after-read, revision diffing, and OAuth authentication.",
-      tag: "backend · TypeScript · PostgreSQL",
-      href: process.env.NEXT_PUBLIC_PROJECT_PASTE_URL || "https://github.com/himanshu-gunwant/Paste",
-      isExternal: true,
+      slug: "paste",
+      description: "A full-stack paste-sharing platform featuring atomic burn-after-read, revision diffing, developer APIs, and moderation.",
+      tag: "Next.js 15 · Express 5 · PostgreSQL · Redis",
+      href: "/projects/paste",
+      githubUrl: process.env.NEXT_PUBLIC_PROJECT_PASTE_URL || "https://github.com/himanshu-gunwant/Paste",
+      liveUrl: process.env.NEXT_PUBLIC_PROJECT_PASTE_LIVE_URL || "https://paste.himanshugunwant.com",
+      isExternal: false,
     },
   ],
 };

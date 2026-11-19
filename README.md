@@ -33,6 +33,7 @@ I wanted my corner of the internet to be fast, quiet, and distraction-free:
 ```
 ├── app/
 │   ├── feed.xml/route.ts      # Native RSS 2.0 XML generator
+│   ├── projects/              # Projects index & dedicated [slug] case studies (Relay X & Paste)
 │   ├── writing/               # Writing index & dynamic [slug] article views
 │   ├── globals.css            # Tailwind v4 theme, tokens & CSS keyframes
 │   ├── layout.tsx             # Root layout, Geist fonts & global SEO metadata
@@ -40,9 +41,12 @@ I wanted my corner of the internet to be fast, quiet, and distraction-free:
 │   ├── robots.ts              # Dynamic robots.txt
 │   └── sitemap.ts             # Dynamic sitemap.xml
 ├── components/                # Modular React components (Hero, Nav, Projects, etc.)
-├── content/writing/           # My essays and technical writings in MDX
-├── data/site.ts               # Site configuration, bio, socials & project entries
-└── lib/                       # MDX parsing utilities and TypeScript definitions
+├── content/writing/           # Essays and technical writings in MDX
+├── data/                      # Site configuration, project case studies & bio
+│   ├── projects.ts            # Detailed architecture, technical facts & ADRs for Relay X & Paste
+│   └── site.ts                # Site configuration, bio, socials & project entries
+├── lib/                       # MDX parsing utilities and TypeScript definitions
+└── public/projects/           # Authentic screenshots and visual assets for Relay X & Paste
 ```
 
 ---

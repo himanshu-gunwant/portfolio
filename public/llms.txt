@@ -15,8 +15,8 @@ I enjoy solving problems, experimenting with ideas, and building software that's
 
 ## Projects
 
-- [Antigravity Companion](https://github.com/himanshu-gunwant/Antigravity-Companion): Cross-platform mobile workspace client and relay server for real-time synchronization and conversation management. (mobile · Flutter · Node.js)
-- [Paste](https://github.com/himanshu-gunwant/Paste): Production-grade Pastebin platform backend featuring atomic burn-after-read, revision diffing, and OAuth authentication. (backend · TypeScript · PostgreSQL)
+- [Relay X](https://himanshugunwant.com/projects/relay-x): A mobile companion for remote development and autonomous AI coding workflows. Real-time telemetry, agent streaming, and remote control. (Flutter · Fastify · WebSockets · TypeScript) | GitHub: https://github.com/himanshu-gunwant/Relay-X
+- [Paste](https://himanshugunwant.com/projects/paste): A modern, production-grade paste-sharing application featuring atomic burn-after-read, revision diffing, and developer APIs. (Next.js 15 · Express 5 · PostgreSQL · Redis) | Live: https://paste.himanshugunwant.com | GitHub: https://github.com/himanshu-gunwant/Paste
 
 ## Writing
 

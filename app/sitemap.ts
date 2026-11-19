@@ -16,6 +16,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const projectUrls: MetadataRoute.Sitemap = [
+    {
+      url: `${siteUrl}/projects/relay-x`,
+      lastModified: latestDate,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/projects/paste`,
+      lastModified: latestDate,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  ];
+
   return [
     {
       url: siteUrl,
@@ -24,6 +39,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
       images: [`${siteUrl}${siteConfig.avatar}`],
     },
+    {
+      url: `${siteUrl}/projects`,
+      lastModified: latestDate,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    ...projectUrls,
     {
       url: `${siteUrl}/writing`,
       lastModified: latestDate,

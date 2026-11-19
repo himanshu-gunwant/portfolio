@@ -8,9 +8,14 @@ export async function GET() {
   const aboutSection = siteConfig.about.join("\n\n");
 
   const projectItems = siteConfig.projects
-    .map(
-      (p) => `- [${p.name}](${p.href}): ${p.description} (${p.tag})`
-    )
+    .map((p) => {
+      const fullUrl = p.href.startsWith("http") ? p.href : `${siteUrl}${p.href}`;
+      const extraLinks: string[] = [];
+      if (p.liveUrl) extraLinks.push(`Live: ${p.liveUrl}`);
+      if (p.githubUrl) extraLinks.push(`GitHub: ${p.githubUrl}`);
+      const suffix = extraLinks.length > 0 ? ` | ${extraLinks.join(" | ")}` : "";
+      return `- [${p.name}](${fullUrl}): ${p.description} (${p.tag})${suffix}`;
+    })
     .join("\n");
 
   const writingItems = posts

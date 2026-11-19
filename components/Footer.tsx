@@ -3,7 +3,7 @@ import { siteConfig } from "@/data/site";
 export function Footer() {
   const currentYear = 2026;
   const githubLink =
-    siteConfig.socials.find((s) => s.icon === "github")?.href || "https://github.com";
+    siteConfig.socials.find((s) => s.icon === "github")?.href || "https://github.com/himanshu-gunwant";
 
   return (
     <footer className="mt-20 pt-8 pb-12 border-t border-white/10 text-xs text-muted flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
@@ -28,6 +28,14 @@ export function Footer() {
           className="hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/30 rounded"
         >
           llms.txt
+        </a>
+        <a
+          href={siteConfig.linksUrl || "https://links.himanshugunwant.com"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/30 rounded"
+        >
+          Links
         </a>
         <a
           href={githubLink}
