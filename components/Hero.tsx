@@ -9,11 +9,11 @@ export function Hero() {
         <Image
           src={siteConfig.avatar}
           alt={`${siteConfig.name}'s profile avatar`}
-          width={112}
-          height={112}
-          sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
+          width={224}
+          height={224}
+          quality={95}
+          sizes="(max-width: 640px) 160px, (max-width: 768px) 192px, 224px"
           priority
-          unoptimized
           className="w-full h-full rounded-2xl sm:rounded-[24px] object-cover ring-1 ring-white/10 shadow-sm"
         />
       </div>

@@ -74,13 +74,23 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     siteName: siteConfig.name,
     locale: "en_US",
-    type: "website",
+    type: "profile",
+    images: [
+      {
+        url: `${siteConfig.url.replace(/\/$/, "")}/profile.jpg`,
+        width: 1254,
+        height: 1254,
+        alt: siteConfig.name,
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
     creator: "@himanshugg_",
+    images: [`${siteConfig.url.replace(/\/$/, "")}/profile.jpg`],
   },
   icons: {
     icon: [

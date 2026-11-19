@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  openGraph: {
+    images: [
+      {
+        url: `${siteConfig.url.replace(/\/$/, "")}/profile.jpg`,
+        width: 1254,
+        height: 1254,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [`${siteConfig.url.replace(/\/$/, "")}/profile.jpg`],
+  },
 };
 
 export default function HomePage() {
@@ -34,12 +48,33 @@ export default function HomePage() {
     sameAs: siteConfig.socials.map((s) => s.href),
   };
 
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${siteUrl}/#webpage`,
+    url: siteUrl,
+    name: siteConfig.title,
+    description: siteConfig.description,
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${siteUrl}${siteConfig.avatar}`,
+      contentUrl: `${siteUrl}${siteConfig.avatar}`,
+      caption: siteConfig.name,
+    },
+    image: `${siteUrl}${siteConfig.avatar}`,
+    about: {
+      "@type": "Person",
+      name: siteConfig.name,
+    },
+  };
+
   const websiteJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.title,
     url: siteUrl,
     description: siteConfig.description,
+    image: `${siteUrl}${siteConfig.avatar}`,
     author: {
       "@type": "Person",
       name: siteConfig.name,
@@ -48,7 +83,7 @@ export default function HomePage() {
 
   return (
     <div className="pt-6 sm:pt-10 space-y-2">
-      <JsonLd data={[personJsonLd, websiteJsonLd]} />
+      <JsonLd data={[personJsonLd, webPageJsonLd, websiteJsonLd]} />
       <Hero />
 
       {/* About */}
