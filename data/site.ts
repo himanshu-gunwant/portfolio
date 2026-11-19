@@ -2,7 +2,7 @@ import { SiteConfig } from "@/lib/types";
 
 export const siteConfig: SiteConfig = {
   name: "Himanshu Gunwant",
-  title: "Himanshu Gunwant — Developer & Builder",
+  title: "Himanshu Gunwant",
   tagline: "Developer · Builder · Student @ IIIT Tiruchirappalli",
   description: "Developer · Builder · Student @ IIIT Tiruchirappalli. Minimalist portfolio and writing by Himanshu Gunwant.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://himanshugunwant.com",

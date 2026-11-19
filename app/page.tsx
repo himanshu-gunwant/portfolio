@@ -8,10 +8,14 @@ import { siteConfig } from "@/data/site";
 import { getAllPosts } from "@/lib/mdx";
 
 export const metadata: Metadata = {
+  title: {
+    absolute: "Himanshu Gunwant",
+  },
   alternates: {
     canonical: "/",
   },
   openGraph: {
+    title: "Himanshu Gunwant",
     images: [
       {
         url: `${siteConfig.url.replace(/\/$/, "")}/profile.jpg`,
@@ -23,6 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: "Himanshu Gunwant",
     images: [`${siteConfig.url.replace(/\/$/, "")}/profile.jpg`],
   },
 };
